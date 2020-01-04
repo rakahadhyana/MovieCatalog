@@ -16,7 +16,7 @@ interface FavoriteDao {
     fun getFavoriteTVShows(): LiveData<List<Favorite>>
 
     @Query("SELECT * FROM favorite_table WHERE movie_name LIKE :name")
-    fun getFavoriteByName(name: String): LiveData<List<Favorite>>
+    suspend fun getFavoriteByName(name: String): List<Favorite>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insert(favorite: Favorite)

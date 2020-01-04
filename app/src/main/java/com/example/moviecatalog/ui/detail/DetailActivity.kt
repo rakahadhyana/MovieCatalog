@@ -2,6 +2,7 @@ package com.example.moviecatalog.ui.detail
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
@@ -30,7 +31,8 @@ class DetailActivity : AppCompatActivity() {
         setContentView(R.layout.activity_detail)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        val movie = intent.getParcelableExtra<Movie>(EXTRA_MOVIE)
+        val movie = intent.getParcelableExtra(EXTRA_MOVIE) as Movie
+        val type = intent.getStringExtra(EXTRA_TYPE) as String
         detailViewModel = ViewModelProviders.of(this,
             DetailViewModelFactory(
                 movie,
@@ -42,12 +44,23 @@ class DetailActivity : AppCompatActivity() {
             tv_overview.text = this.overview
             Glide.with(this@DetailActivity).load("https://image.tmdb.org/t/p/original${movie.image}").into(iv_poster_detail)
         }
-        detailViewModel.allFavorite.observe(this, Observer { favorites ->
-            val favorite = Favorite(movie.name, movie.image, movie.overview, "movie")
-            if(favorites.contains(favorite)){
+        detailViewModel.getIsFavorite().observe(this, Observer { isFavorite ->
+            Log.i("isFavorite", isFavorite.toString())
+            if(isFavorite){
                 menu?.getItem(0)?.icon = getDrawable(R.drawable.ic_favorite)
             } else {
                 menu?.getItem(0)?.icon = getDrawable(R.drawable.ic_favorite_border_black_24dp)
+            }
+        })
+        detailViewModel.getFavoriteClicked().observe(this, Observer {
+            if(it){
+                val favorite = Favorite(movie.name, movie.image, movie.overview, type)
+                detailViewModel.insert(favorite)
+                Toast.makeText(this, "add to favorite", Toast.LENGTH_SHORT).show()
+            }else{
+                val favorite = Favorite(movie.name, movie.image, movie.overview, type)
+                detailViewModel.delete(favorite)
+                Toast.makeText(this, "remove from favorite", Toast.LENGTH_SHORT).show()
             }
         })
     }
@@ -60,12 +73,7 @@ class DetailActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.action_favorite){
-            val movie = detailViewModel.getMovie()
-            val type = intent.getStringExtra(EXTRA_TYPE)
-            val favorite = Favorite(movie.name, movie.image, movie.overview, type)
-            detailViewModel.insert(favorite)
-            Toast.makeText(applicationContext, "Action clicked", Toast.LENGTH_SHORT).show()
-            item.icon = getDrawable(R.drawable.ic_favorite)
+            detailViewModel.onFavoriteClicked()
             return true
         }
         return super.onOptionsItemSelected(item)

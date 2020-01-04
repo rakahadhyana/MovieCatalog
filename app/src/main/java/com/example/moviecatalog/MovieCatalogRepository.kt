@@ -12,7 +12,7 @@ class MovieCatalogRepository(private val favoriteDao: FavoriteDao) {
 
     val favoriteTvShow: LiveData<List<Favorite>> = favoriteDao.getFavoriteTVShows()
 
-    fun getFavoriteByName(movieName: String): LiveData<List<Favorite>>{
+    suspend fun getFavoriteByName(movieName: String): List<Favorite>{
         return favoriteDao.getFavoriteByName(movieName)
     }
 
