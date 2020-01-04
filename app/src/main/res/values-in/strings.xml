@@ -83,8 +83,8 @@
     <string name="navigation_drawer_open">Buka navigation drawer</string>
     <string name="navigation_drawer_close">Tutup navigation drawer</string>
 
-    <string name="menu_movie">Movie</string>
-    <string name="menu_tv_show">TV Show</string>
+    <string name="menu_movie">Film</string>
+    <string name="menu_tv_show">Acara TV</string>
     <string name="user">User</string>
     <string name="user_mail_com">user@mail.com</string>
     <string name="overview">Ringkasan</string>

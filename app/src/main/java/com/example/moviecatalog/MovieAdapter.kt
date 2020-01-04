@@ -6,11 +6,19 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.moviecatalog.model.Movie
 import kotlinx.android.synthetic.main.item_movie.view.*
 
-class MovieAdapter internal constructor(private val movies: ArrayList<Movie>):
+class MovieAdapter:
     RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
+    private val movies: ArrayList<Movie> = ArrayList()
+
+    fun setData(items: ArrayList<Movie>){
+        movies.clear()
+        movies.addAll(items)
+        notifyDataSetChanged()
+    }
 
     private var onItemClickCallback: OnItemClickCallback? = null
 
@@ -42,7 +50,7 @@ class MovieAdapter internal constructor(private val movies: ArrayList<Movie>):
             }
             txtName.text = movie.name
             txtOverview.text = movie.overview
-            imgPoster.setImageResource(movie.image)
+            Glide.with(itemView.context).load("https://image.tmdb.org/t/p/original${movie.image}").into(imgPoster)
         }
     }
 

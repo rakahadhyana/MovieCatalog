@@ -7,14 +7,21 @@
 
     <fragment
         android:id="@+id/nav_movie"
-        android:name="com.example.moviecatalog.ui.home.HomeFragment"
+        android:name="com.example.moviecatalog.ui.movie.MovieFragment"
         android:label="@string/menu_movie"
         tools:layout="@layout/fragment_movie" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.moviecatalog.ui.gallery.GalleryFragment"
+        android:id="@+id/nav_tvshow"
+        android:name="com.example.moviecatalog.ui.tvshow.TvShowFragment"
         android:label="@string/menu_tv_show"
         tools:layout="@layout/fragment_tv_show" />
+
+    <fragment
+        android:id="@+id/nav_favorite"
+        android:name="com.example.moviecatalog.ui.favorite.FavoriteFragment"
+        android:label="Favorite"
+        tools:layout="@layout/favorite_fragment"
+        />
 
 </navigation>
