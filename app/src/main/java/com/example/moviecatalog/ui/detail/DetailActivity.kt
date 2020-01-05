@@ -56,11 +56,11 @@ class DetailActivity : AppCompatActivity() {
             if(it){
                 val favorite = Favorite(movie.name, movie.image, movie.overview, type)
                 detailViewModel.insert(favorite)
-                Toast.makeText(this, "add to favorite", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.add_favorite), Toast.LENGTH_SHORT).show()
             }else{
                 val favorite = Favorite(movie.name, movie.image, movie.overview, type)
                 detailViewModel.delete(favorite)
-                Toast.makeText(this, "remove from favorite", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.remove_favorite), Toast.LENGTH_SHORT).show()
             }
         })
     }

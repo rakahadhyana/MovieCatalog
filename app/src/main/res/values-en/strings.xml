@@ -2,84 +2,6 @@
 <resources>
     <string name="app_name">MovieCatalog</string>
 
-    <string-array name="data_name">
-        <item>A Star Is Born</item>
-        <item>Aquaman</item>
-        <item>Avengers: Infinity War</item>
-        <item>Bird Box</item>
-        <item>Bohemian Rhapsody</item>
-        <item>Bumblebee</item>
-        <item>Creed II</item>
-        <item>Once Upon a Deadpool</item>
-        <item>How To Train Your Dragon 2</item>
-        <item>Dragon Ball Super: Broly</item>
-    </string-array>
-
-    <string-array name="data_overview">
-        <item>Seasoned musician Jackson Maine discovers — and falls in love with — struggling artist Ally. She has just about given up on her dream to make it big as a singer — until Jack coaxes her into the spotlight. But even as Ally\'s career takes off, the personal side of their relationship is breaking down, as Jack fights an ongoing battle with his own internal demons.</item>
-        <item>Once home to the most advanced civilization on Earth, Atlantis is now an underwater kingdom ruled by the power-hungry King Orm. With a vast army at his disposal, Orm plans to conquer the remaining oceanic people and then the surface world. Standing in his way is Arthur Curry, Orm\'s half-human, half-Atlantean brother and true heir to the throne.</item>
-        <item>As the Avengers and their allies have continued to protect the world from threats too large for any one hero to handle, a new danger has emerged from the cosmic shadows: Thanos. A despot of intergalactic infamy, his goal is to collect all six Infinity Stones, artifacts of unimaginable power, and use them to inflict his twisted will on all of reality. Everything the Avengers have fought for has led up to this moment - the fate of Earth and existence itself has never been more uncertain.</item>
-        <item>Five years after an ominous unseen presence drives most of society to suicide, a survivor and her two children make a desperate bid to reach safety.</item>
-        <item>Singer Freddie Mercury, guitarist Brian May, drummer Roger Taylor and bass guitarist John Deacon take the music world by storm when they form the rock \'n\' roll band Queen in 1970. Hit songs become instant classics. When Mercury\'s increasingly wild lifestyle starts to spiral out of control, Queen soon faces its greatest challenge yet – finding a way to keep the band together amid the success and excess.</item>
-        <item>On the run in the year 1987, Bumblebee finds refuge in a junkyard in a small Californian beach town. Charlie, on the cusp of turning 18 and trying to find her place in the world, discovers Bumblebee, battle-scarred and broken. When Charlie revives him, she quickly learns this is no ordinary yellow VW bug.</item>
-        <item>Between personal obligations and training for his next big fight against an opponent with ties to his family\'s past, Adonis Creed is up against the challenge of his life.</item>
-        <item>A kidnapped Fred Savage is forced to endure Deadpool\'s PG-13 rendition of Deadpool 2 as a Princess Bride-esque story that\'s full of magic, wonder &amp; zero F\'s.</item>
-        <item>The thrilling second chapter of the epic How To Train Your Dragon trilogy brings back the fantastical world of Hiccup and Toothless five years later. While Astrid, Snotlout and the rest of the gang are challenging each other to dragon races (the island\'s new favorite contact sport), the now inseparable pair journey through the skies, charting unmapped territories and exploring new worlds. When one of their adventures leads to the discovery of a secret ice cave that is home to hundreds of new wild dragons and the mysterious Dragon Rider, the two friends find themselves at the center of a battle to protect the peace.</item>
-        <item>Earth is peaceful following the Tournament of Power. Realizing that the universes still hold many more strong people yet to see, Goku spends all his days training to reach even greater heights. Then one day, Goku and Vegeta are faced by a Saiyan called \'Broly\' who they\'ve never seen before. The Saiyans were supposed to have been almost completely wiped out in the destruction of Planet Vegeta, so what\'s this one doing on Earth? This encounter between the three Saiyans who have followed completely different destinies turns into a stupendous battle, with even Frieza (back from Hell) getting caught up in the mix.</item>
-    </string-array>
-
-    <array name="data_poster">
-        <item>@drawable/poster_a_star</item>
-        <item>@drawable/poster_aquaman</item>
-        <item>@drawable/poster_avengerinfinity</item>
-        <item>@drawable/poster_birdbox</item>
-        <item>@drawable/poster_bohemian</item>
-        <item>@drawable/poster_bumblebee</item>
-        <item>@drawable/poster_creed</item>
-        <item>@drawable/poster_deadpool</item>
-        <item>@drawable/poster_dragon</item>
-        <item>@drawable/poster_dragonball</item>
-    </array>
-
-    <string-array name="data_name_tv_show">
-        <item>Arrow</item>
-        <item>Doom Patrol</item>
-        <item>Dragon Ball</item>
-        <item>Fairy Tail</item>
-        <item>Family Guy</item>
-        <item>Flash</item>
-        <item>Game Of Thrones</item>
-        <item>Gotham</item>
-        <item>Grey Anatomy</item>
-        <item>Hanna</item>
-    </string-array>
-
-    <string-array name="data_overview_tv_show">
-        <item>Spoiled billionaire playboy Oliver Queen is missing and presumed dead when his yacht is lost at sea. He returns five years later a changed man, determined to clean up the city as a hooded vigilante armed with a bow.</item>
-        <item>The Doom Patrol\'s members each suffered horrible accidents that gave them superhuman abilities — but also left them scarred and disfigured. Traumatized and downtrodden, the team found purpose through The Chief, who brought them together to investigate the weirdest phenomena in existence — and to protect Earth from what they find.</item>
-        <item>Long ago in the mountains, a fighting master known as Gohan discovered a strange boy whom he named Goku. Gohan raised him and trained Goku in martial arts until he died. The young and very strong boy was on his own, but easily managed. Then one day, Goku met a teenage girl named Bulma, whose search for the mystical Dragon Balls brought her to Goku\'s home. Together, they set off to find all seven and to grant her wish.</item>
-        <item>Lucy is a 17-year-old girl, who wants to be a full-fledged mage. One day when visiting Harujion Town, she meets Natsu, a young man who gets sick easily by any type of transportation. But Natsu isn\'t just any ordinary kid, he\'s a member of one of the world\'s most infamous mage guilds: Fairy Tail.</item>
-        <item>Sick, twisted, politically incorrect and Freakin\' Sweet animated series featuring the adventures of the dysfunctional Griffin family. Bumbling Peter and long-suffering Lois have three kids. Stewie (a brilliant but sadistic baby bent on killing his mother and taking over the world), Meg (the oldest, and is the most unpopular girl in town) and Chris (the middle kid, he\'s not very bright but has a passion for movies). The final member of the family is Brian - a talking dog and much more than a pet, he keeps Stewie in check whilst sipping Martinis and sorting through his own life issues.</item>
-        <item>After a particle accelerator causes a freak storm, CSI Investigator Barry Allen is struck by lightning and falls into a coma. Months later he awakens with the power of super speed, granting him the ability to move through Central City like an unseen guardian angel. Though initially excited by his newfound powers, Barry is shocked to discover he is not the only \"meta-human\" who was created in the wake of the accelerator explosion — and not everyone is using their new powers for good. Barry partners with S.T.A.R. Labs and dedicates his life to protect the innocent. For now, only a few close friends and associates know that Barry is literally the fastest man alive, but it won\'t be long before the world learns what Barry Allen has become…The Flash.</item>
-        <item>Seven noble families fight for control of the mythical land of Westeros. Friction between the houses leads to full-scale war. All while a very ancient evil awakens in the farthest north. Amidst the war, a neglected military order of misfits, the Night\'s Watch, is all that stands between the realms of men and icy horrors beyond.</item>
-        <item>Before there was Batman, there was GOTHAM. Everyone knows the name Commissioner Gordon. He is one of the crime world\'s greatest foes, a man whose reputation is synonymous with law and order. But what is known of Gordon\'s story and his rise from rookie detective to Police Commissioner? What did it take to navigate the multiple layers of corruption that secretly ruled Gotham City, the spawning ground of the world\'s most iconic villains? And what circumstances created them – the larger-than-life personas who would become Catwoman, The Penguin, The Riddler, Two-Face and The Joker?</item>
-        <item>Follows the personal and professional lives of a group of doctors at Seattle\'s Grey Sloan Memorial Hospital.</item>
-        <item>This thriller and coming-of-age drama follows the journey of an extraordinary young girl as she evades the relentless pursuit of an off-book CIA agent and tries to unearth the truth behind who she is. Based on the 2011 Joe Wright film.</item>
-    </string-array>
-
-    <array name="data_poster_tv_show">
-        <item>@drawable/poster_arrow</item>
-        <item>@drawable/poster_doom_patrol</item>
-        <item>@drawable/poster_dragon_ball</item>
-        <item>@drawable/poster_fairytail</item>
-        <item>@drawable/poster_family_guy</item>
-        <item>@drawable/poster_flash</item>
-        <item>@drawable/poster_god</item>
-        <item>@drawable/poster_gotham</item>
-        <item>@drawable/poster_grey_anatomy</item>
-        <item>@drawable/poster_hanna</item>
-    </array>
-
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
@@ -91,4 +13,9 @@
     <string name="movies">Movies</string>
     <string name="tv_show">TV Show</string>
     <string name="language_setting">Language Setting</string>
+    <string name="add_favorite">add to favorite</string>
+    <string name="remove_favorite">removed from favorite</string>
+    <string name="favorite">Favorite</string>
+    <string name="movie_poster">movie poster</string>
+    <string name="user_icon">user icon</string>
 </resources>

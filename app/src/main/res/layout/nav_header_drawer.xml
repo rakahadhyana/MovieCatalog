@@ -19,7 +19,8 @@
         android:layout_height="80dp"
         android:src="@drawable/ic_account_circle_black_24dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/user_icon" />
 
     <TextView
         android:id="@+id/textView2"

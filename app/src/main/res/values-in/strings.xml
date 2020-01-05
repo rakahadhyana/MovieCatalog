@@ -2,84 +2,6 @@
 <resources>
     <string name="app_name">KatalogFilm</string>
 
-    <string-array name="data_name">
-        <item>A Star Is Born</item>
-        <item>Aquaman</item>
-        <item>Avengers: Infinity War</item>
-        <item>Bird Box</item>
-        <item>Bohemian Rhapsody</item>
-        <item>Bumblebee</item>
-        <item>Creed II</item>
-        <item>Once Upon a Deadpool</item>
-        <item>How To Train Your Dragon 2</item>
-        <item>Dragon Ball Super: Broly</item>
-    </string-array>
-
-    <string-array name="data_overview">
-        <item>Musisi kawakan Jackson Maine menemukan - dan jatuh cinta dengan - artis yang sedang berjuang Ally. Dia baru saja menyerah pada mimpinya untuk menjadi besar sebagai penyanyi - sampai Jack membujuknya menjadi sorotan. Tetapi ketika karir Ally lepas landas, sisi pribadi dari hubungan mereka hancur, Jack berjuang melawan iblis di dalam sendiri.</item>
-        <item>Dulunya merupakan rumah bagi peradaban paling maju di Bumi, Atlantis sekarang merupakan kerajaan bawah laut yang diperintah oleh Raja Orm yang haus kekuasaan. Dengan pasukan yang sangat besar, Orm berencana untuk menaklukkan orang-orang samudera yang tersisa dan kemudian ke permukaan dunia. Yang menghalangi jalannya adalah Arthur Curry, saudara setengah manusia, setengah Atlantis dan pewaris sejati takhta.</item>
-        <item>Ketika Avengers dan sekutu mereka terus melindungi dunia dari ancaman yang terlalu besar untuk ditangani oleh satu pahlawan, bahaya baru telah muncul dari bayang-bayang kosmik: Thanos. Seorang lalim penghinaan intergalaksi, tujuannya adalah untuk mengumpulkan semua enam Batu Infinity, artefak kekuatan tak terbayangkan, dan menggunakannya untuk menimbulkan keinginannya yang terpelintir pada semua kenyataan. Segala yang Avengers telah perjuangkan telah mengarah ke saat ini - nasib Bumi dan keberadaannya sendiri tidak pernah lebih pasti.</item>
-        <item>Lima tahun setelah kehadiran tak terlihat yang tak menyenangkan membuat sebagian besar masyarakat bunuh diri, seorang yang selamat dan dua anaknya melakukan upaya putus asa untuk mencapai keselamatan.</item>
-        <item>Penyanyi Freddie Mercury, gitaris Brian May, drummer Roger Taylor dan gitaris bass John Deacon membuat dunia musik terguncang ketika mereka membentuk band rock Queen Rock pada tahun 1970. Lagu-lagu hit menjadi klasik instan. Ketika gaya hidup Mercury yang semakin liar mulai lepas kendali, Queen segera menghadapi tantangan terbesarnya - menemukan cara untuk menjaga band tetap bersama di tengah kesuksesan dan kelebihan.</item>
-        <item>Dalam pelarian pada tahun 1987, Bumblebee menemukan tempat perlindungan di tempat barang rongsokan di kota pantai kecil California. Charlie, di puncak usia 18 dan berusaha menemukan tempatnya di dunia, menemukan Bumblebee, bekas luka pertempuran dan patah. Ketika Charlie menghidupkannya, dia dengan cepat mengetahui bahwa ini bukan VW kumbang kuning biasa.</item>
-        <item>Antara kewajiban pribadi dan pelatihan untuk pertarungan besar berikutnya melawan lawan yang memiliki ikatan dengan masa lalu keluarganya, Adonis Creed menghadapi tantangan hidupnya.</item>
-        <item>Fred Savage yang diculik dipaksa untuk menanggung Deadpool 2 PG-13 rendition Deadpool 2 sebagai cerita Putri Pengantin-esque yang penuh dengan sihir, keajaiban &amp; nol F.</item>
-        <item>Bab kedua yang mendebarkan dari epik How To Train Your Dragon trilogy membawa kembali dunia fantastik Hiccup dan Toothless lima tahun kemudian. Sementara Astrid, Snotlout, dan anggota geng lainnya saling menantang untuk balapan naga (olahraga kontak favorit baru di pulau itu), perjalanan berpasangan yang tak terpisahkan ini melintasi langit, memetakan wilayah yang belum dipetakan, dan menjelajahi dunia baru. Ketika salah satu petualangan mereka mengarah pada penemuan gua es rahasia yang menjadi rumah bagi ratusan naga liar baru dan Penunggang Naga misterius, kedua sahabat itu menemukan diri mereka di tengah pertempuran untuk melindungi perdamaian.</item>
-        <item>Bumi damai setelah Turnamen Kekuasaan. Menyadari bahwa alam semesta masih memiliki banyak orang yang lebih kuat untuk dilihat, Goku menghabiskan seluruh hari pelatihannya untuk mencapai ketinggian yang lebih besar. Lalu suatu hari, Goku dan Vegeta dihadapkan oleh seorang Saiyan yang disebut \'Broly\' yang belum pernah mereka lihat sebelumnya. Orang-orang Saiyan seharusnya hampir sepenuhnya musnah dalam kehancuran Planet Vegeta, jadi apa yang dilakukan orang ini di Bumi? Pertemuan antara tiga Saiyan yang telah mengikuti takdir yang sangat berbeda ini berubah menjadi pertempuran yang luar biasa, dengan bahkan Frieza (kembali dari Neraka) terperangkap dalam campuran.</item>
-    </string-array>
-
-    <array name="data_poster">
-        <item>@drawable/poster_a_star</item>
-        <item>@drawable/poster_aquaman</item>
-        <item>@drawable/poster_avengerinfinity</item>
-        <item>@drawable/poster_birdbox</item>
-        <item>@drawable/poster_bohemian</item>
-        <item>@drawable/poster_bumblebee</item>
-        <item>@drawable/poster_creed</item>
-        <item>@drawable/poster_deadpool</item>
-        <item>@drawable/poster_dragon</item>
-        <item>@drawable/poster_dragonball</item>
-    </array>
-
-    <string-array name="data_name_tv_show">
-        <item>Arrow</item>
-        <item>Doom Patrol</item>
-        <item>Dragon Ball</item>
-        <item>Fairy Tail</item>
-        <item>Family Guy</item>
-        <item>Flash</item>
-        <item>Game Of Thrones</item>
-        <item>Gotham</item>
-        <item>Grey Anatomy</item>
-        <item>Hanna</item>
-    </string-array>
-
-    <string-array name="data_overview_tv_show">
-        <item>Playboy miliarder manja, Oliver Queen, hilang dan diduga tewas ketika kapal pesiarnya hilang di laut. Dia kembali lima tahun kemudian seorang pria yang berubah, bertekad untuk membersihkan kota sebagai penegak hukum bertudung bersenjatakan busur.</item>
-        <item>Anggota Patroli Doom masing-masing mengalami kecelakaan mengerikan yang memberi mereka kemampuan manusia super - tetapi juga membuat mereka terluka dan cacat. Trauma dan tertindas, tim menemukan tujuan melalui Ketua, yang menyatukan mereka untuk menyelidiki fenomena aneh yang ada - dan untuk melindungi Bumi dari apa yang mereka temukan.</item>
-        <item>Dahulu kala di pegunungan, seorang master pertempuran yang dikenal sebagai Gohan menemukan seorang bocah aneh yang ia beri nama Goku. Gohan membesarkannya dan melatih Goku dalam seni bela diri sampai dia mati. Bocah muda dan sangat kuat itu sendirian, tetapi mudah dikelola. Kemudian suatu hari, Goku bertemu dengan seorang gadis remaja bernama Bulma, yang pencariannya untuk Bola Naga mistis membawanya ke rumah Goku. Bersama-sama, mereka berangkat untuk menemukan ketujuh dan mengabulkan keinginannya.</item>
-        <item>Lucy adalah seorang gadis berusia 17 tahun, yang ingin menjadi penyihir penuh. Suatu hari ketika mengunjungi Kota Harujion, dia bertemu Natsu, seorang pemuda yang mudah sakit karena segala jenis transportasi. Tapi Natsu bukan sembarang anak biasa, ia adalah anggota dari salah satu serikat penyihir paling terkenal di dunia: Fairy Tail.</item>
-        <item>Seri animasi manis, Freakin, Twisted, salah secara politik dan Freakin menampilkan petualangan keluarga Griffin yang disfungsional. Peter yang kikuk dan Lois yang sudah lama menderita memiliki tiga anak. Stewie (bayi yang cerdas tetapi sadis yang bertekad membunuh ibunya dan mengambil alih dunia), Meg (yang tertua, dan merupakan gadis yang paling tidak populer di kota) dan Chris (anak tengah, dia tidak terlalu cerdas tetapi memiliki gairah untuk film). Anggota terakhir keluarga itu adalah Brian - anjing yang bisa bicara dan lebih dari sekadar hewan peliharaan, ia menjaga Stewie, sementara menghirup Martinis dan memilah-milah masalah hidupnya sendiri.</item>
-        <item>Setelah akselerator partikel menyebabkan badai aneh, Penyelidik CSI Barry Allen disambar petir dan jatuh koma. Beberapa bulan kemudian dia terbangun dengan kekuatan kecepatan super, memberinya kemampuan untuk bergerak melalui Central City seperti malaikat penjaga yang tak terlihat. Meskipun awalnya senang dengan kekuatan barunya, Barry terkejut menemukan bahwa dia bukan satu-satunya "meta-manusia" yang diciptakan setelah ledakan akselerator - dan tidak semua orang menggunakan kekuatan baru mereka untuk kebaikan. Barry bermitra dengan S.T.A.R. Lab dan mendedikasikan hidupnya untuk melindungi yang tidak bersalah. Untuk saat ini, hanya beberapa teman dekat dan rekan yang tahu bahwa Barry secara harfiah adalah manusia tercepat, tetapi tidak akan lama sebelum dunia mengetahui apa yang menjadi Barry Allen … The Flash.</item>
-        <item>Tujuh keluarga bangsawan berjuang untuk menguasai tanah mistis Westeros. Gesekan antara kerajaan mengarah ke perang skala penuh. Semua sementara kejahatan yang sangat kuno terbangun di utara terjauh. Di tengah-tengah perang, perintah militer yang diabaikan, Night\'s Watch, hanyalah yang berdiri di antara ranah manusia dan kengerian es di luarnya.</item>
-        <item>Sebelum ada Batman, ada GOTHAM. Semua orang tahu nama Komisaris Gordon. Dia adalah salah satu musuh terbesar dunia kejahatan, seorang pria yang reputasinya identik dengan hukum dan ketertiban. Tapi apa yang diketahui dari kisah Gordon dan kebangkitannya dari detektif pemula menjadi Komisaris Polisi? Apa yang diperlukan untuk menavigasi berbagai lapisan korupsi yang diam-diam memerintah Kota Gotham, tempat bertelurnya penjahat paling ikonik di dunia? Dan keadaan apa yang menciptakan mereka - persona yang lebih besar dari kehidupan yang akan menjadi Catwoman, The Penguin, The Riddler, Two-Face dan The Joker?</item>
-        <item>Mengikuti kehidupan pribadi dan profesional sekelompok dokter di Rumah Sakit Gray Sloan Memorial Seattle.</item>
-        <item>Drama yang menegangkan dan menjadi dewasa ini mengikuti perjalanan seorang gadis muda yang luar biasa ketika ia menghindari pengejaran tanpa henti dari seorang agen CIA yang tidak ada buku dan mencoba untuk menggali kebenaran di balik siapa dirinya. Berdasarkan film Joe Wright 2011.</item>
-    </string-array>
-
-    <array name="data_poster_tv_show">
-        <item>@drawable/poster_arrow</item>
-        <item>@drawable/poster_doom_patrol</item>
-        <item>@drawable/poster_dragon_ball</item>
-        <item>@drawable/poster_fairytail</item>
-        <item>@drawable/poster_family_guy</item>
-        <item>@drawable/poster_flash</item>
-        <item>@drawable/poster_god</item>
-        <item>@drawable/poster_gotham</item>
-        <item>@drawable/poster_grey_anatomy</item>
-        <item>@drawable/poster_hanna</item>
-    </array>
-
     <string name="navigation_drawer_open">Buka navigation drawer</string>
     <string name="navigation_drawer_close">Tutup navigation drawer</string>
 
@@ -91,4 +13,9 @@
     <string name="movies">Film</string>
     <string name="tv_show">Acara TV</string>
     <string name="language_setting">Pengaturan Bahasa</string>
+    <string name="add_favorite">ditambahkan ke favorit</string>
+    <string name="remove_favorite">dihapus dari favorite</string>
+    <string name="favorite">Favorit</string>
+    <string name="movie_poster">poster film</string>
+    <string name="user_icon">ikon pengguna</string>
 </resources>

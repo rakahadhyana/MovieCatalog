@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.moviecatalog.BuildConfig
 import com.example.moviecatalog.model.Movie
 import com.loopj.android.http.AsyncHttpClient
 import com.loopj.android.http.AsyncHttpResponseHandler
@@ -22,7 +23,7 @@ class MovieViewModel(private val lang: String) : ViewModel() {
         val client = AsyncHttpClient()
         val listItems = ArrayList<Movie>()
         val language = lang
-        val API_KEY = "722719d7eac7037506047d02af96476e"
+        val API_KEY = BuildConfig.TMDB_API_KEY
         val url = "https://api.themoviedb.org/3/movie/popular?api_key=$API_KEY&language=$language"
         isLoading.postValue(true)
         Log.i("MOVIE_VIEW_MODEL", "CALLING API")

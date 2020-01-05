@@ -20,7 +20,8 @@
             android:scaleType="fitStart"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@drawable/poster_a_star" />
+            tools:srcCompat="@drawable/poster_a_star"
+            android:contentDescription="@string/movie_poster" />
 
         <TextView
             android:id="@+id/tv_overview_head"
@@ -58,7 +59,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/iv_poster_detail"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/iv_poster_detail"
-            tools:text="How To Train Your Dragon 2" />
+            tools:text="A Star is Born" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
