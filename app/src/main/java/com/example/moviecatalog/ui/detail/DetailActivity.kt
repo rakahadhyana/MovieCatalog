@@ -79,9 +79,11 @@ class DetailActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.action_favorite){
             detailViewModel.onFavoriteClicked()
-            val appWidgetManager = AppWidgetManager.getInstance(this)
-            val views = RemoteViews(this.packageName, R.layout.image_banner_widget)
-            appWidgetManager.updateAppWidget(ComponentName(this.packageName, ImagesBannerWidget::class.java.name), views)
+            val manager = AppWidgetManager.getInstance(this)
+            val view = RemoteViews(packageName, R.layout.image_banner_widget)
+            val theWidget = ComponentName(this, ImagesBannerWidget::class.java)
+            val appWidgetIds = manager.getAppWidgetIds(theWidget)
+            manager.notifyAppWidgetViewDataChanged(appWidgetIds, R.id.stack_view)
             return true
         }
         return super.onOptionsItemSelected(item)
