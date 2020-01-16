@@ -5,7 +5,7 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class Movie(
-    var name : String,
-    var image : String,
-    var overview : String
+    var name: String,
+    var image: String,
+    var overview: String
 ) : Parcelable

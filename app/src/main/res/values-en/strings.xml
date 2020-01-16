@@ -18,4 +18,5 @@
     <string name="favorite">Favorite</string>
     <string name="movie_poster">movie poster</string>
     <string name="user_icon">user icon</string>
+    <string name="search_title">search</string>
 </resources>

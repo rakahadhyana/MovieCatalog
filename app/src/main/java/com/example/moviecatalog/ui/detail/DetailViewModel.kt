@@ -1,13 +1,10 @@
 package com.example.moviecatalog.ui.detail
 
 import android.app.Application
-import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.viewModelScope
-import com.example.moviecatalog.database.AppDatabase
+import androidx.lifecycle.*
 import com.example.moviecatalog.MovieCatalogRepository
 import com.example.moviecatalog.SingleLiveEvent
+import com.example.moviecatalog.database.AppDatabase
 import com.example.moviecatalog.database.Favorite
 import com.example.moviecatalog.model.Movie
 import kotlinx.coroutines.launch
@@ -19,7 +16,7 @@ class DetailViewModel(private val movie: Movie, application: Application): Andro
     private val favoriteClicked = SingleLiveEvent<Boolean>()
 
     init {
-        val favoriteDao = AppDatabase.getDatabase(application, viewModelScope).favoriteDao()
+        val favoriteDao = AppDatabase.getDatabase(application).favoriteDao()
         repository = MovieCatalogRepository(favoriteDao)
         viewModelScope.launch {
             val favoriteByName = repository.getFavoriteByName(movie.name)
@@ -60,5 +57,15 @@ class DetailViewModel(private val movie: Movie, application: Application): Andro
     fun onFavoriteClicked() {
         favoriteClicked.postValue(isFavorite.value?.not())
         isFavorite.postValue(isFavorite.value?.not())
+    }
+
+    class Factory constructor(private val movie: Movie, private val application: Application): ViewModelProvider.Factory {
+        override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+            if(modelClass.isAssignableFrom(DetailViewModel::class.java)){
+                @Suppress("UNCHECKED_CAST")
+                return DetailViewModel(movie, application = application) as T
+            }
+            throw IllegalArgumentException("Unknown ViewModel class")
+        }
     }
 }

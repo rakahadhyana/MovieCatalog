@@ -6,4 +6,10 @@
         android:orderInCategory="100"
         android:title="@string/language_setting"
         app:showAsAction="never" />
+    <item android:id="@+id/search"
+        android:title="@string/search_title"
+        android:icon="@drawable/ic_search_white_24dp"
+        app:showAsAction="collapseActionView|ifRoom"
+        app:actionViewClass="android.widget.SearchView"
+        />
 </menu>

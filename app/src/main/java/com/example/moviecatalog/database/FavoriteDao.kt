@@ -12,6 +12,9 @@ interface FavoriteDao {
     @Query("SELECT * FROM favorite_table WHERE type='movie'")
     fun getFavoriteMovies(): LiveData<List<Favorite>>
 
+    @Query("SELECT * FROM favorite_table WHERE type='movie'")
+    fun getListFavoriteMovies() : List<Favorite>
+
     @Query("SELECT * FROM favorite_table WHERE type='tvshow'")
     fun getFavoriteTVShows(): LiveData<List<Favorite>>
 

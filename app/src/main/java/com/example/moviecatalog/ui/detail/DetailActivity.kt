@@ -1,10 +1,13 @@
 package com.example.moviecatalog.ui.detail
 
+import android.appwidget.AppWidgetManager
+import android.content.ComponentName
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.RemoteViews
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -12,6 +15,7 @@ import com.bumptech.glide.Glide
 import com.example.moviecatalog.R
 import com.example.moviecatalog.database.Favorite
 import com.example.moviecatalog.model.Movie
+import com.example.moviecatalog.widget.ImagesBannerWidget
 import kotlinx.android.synthetic.main.activity_detail.*
 
 class DetailActivity : AppCompatActivity() {
@@ -34,7 +38,7 @@ class DetailActivity : AppCompatActivity() {
         val movie = intent.getParcelableExtra(EXTRA_MOVIE) as Movie
         val type = intent.getStringExtra(EXTRA_TYPE) as String
         detailViewModel = ViewModelProviders.of(this,
-            DetailViewModelFactory(
+            DetailViewModel.Factory(
                 movie,
                 application
             )
@@ -52,6 +56,7 @@ class DetailActivity : AppCompatActivity() {
                 menu?.getItem(0)?.icon = getDrawable(R.drawable.ic_favorite_border_black_24dp)
             }
         })
+        componentName
         detailViewModel.getFavoriteClicked().observe(this, Observer {
             if(it){
                 val favorite = Favorite(movie.name, movie.image, movie.overview, type)
@@ -74,6 +79,9 @@ class DetailActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.action_favorite){
             detailViewModel.onFavoriteClicked()
+            val appWidgetManager = AppWidgetManager.getInstance(this)
+            val views = RemoteViews(this.packageName, R.layout.image_banner_widget)
+            appWidgetManager.updateAppWidget(ComponentName(this.packageName, ImagesBannerWidget::class.java.name), views)
             return true
         }
         return super.onOptionsItemSelected(item)

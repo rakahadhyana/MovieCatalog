@@ -3,9 +3,7 @@ package com.example.moviecatalog.ui.favorite
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
@@ -36,9 +34,20 @@ class FavoriteFragment : Fragment() {
         viewPager = view.findViewById(R.id.pager)
         viewPager.adapter = favoritePagerAdapter
     }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        menu.findItem(R.id.search).isEnabled = false
+        menu.findItem(R.id.search).isVisible = false
+    }
 }
 
-class FavoritePagerAdapter(fm: FragmentManager, val context: Context?) : FragmentPagerAdapter(fm) {
+class FavoritePagerAdapter(fm: FragmentManager, val context: Context?) : FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
     override fun getItem(position: Int): Fragment {
         val fragment = FavoriteRecyclerViewFragment()
         fragment.arguments = Bundle().apply {
@@ -94,7 +103,7 @@ class FavoriteRecyclerViewFragment : Fragment() {
             viewModel = ViewModelProviders.of(
                 this@FavoriteRecyclerViewFragment,
                 activity?.application?.let {
-                    FavoriteViewModelFactory(
+                    FavoriteViewModel.Factory(
                         position,
                         it
                     )

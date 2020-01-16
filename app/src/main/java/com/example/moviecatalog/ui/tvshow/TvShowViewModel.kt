@@ -1,73 +1,76 @@
 package com.example.moviecatalog.ui.tvshow
 
+import android.app.Application
 import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import com.example.moviecatalog.BuildConfig
+import androidx.lifecycle.*
+import com.example.moviecatalog.MovieCatalogRepository
+import com.example.moviecatalog.database.AppDatabase
 import com.example.moviecatalog.model.Movie
-import com.loopj.android.http.AsyncHttpClient
-import com.loopj.android.http.AsyncHttpResponseHandler
-import cz.msebera.android.httpclient.Header
-import org.json.JSONObject
-import java.util.*
-import kotlin.collections.ArrayList
+import kotlinx.coroutines.launch
 
-class TvShowViewModel(private val lang :String) : ViewModel() {
-    private val listMovie = MutableLiveData<ArrayList<Movie>>()
+class TvShowViewModel(private val lang :String, application: Application) : AndroidViewModel(application) {
+
+    private val repository: MovieCatalogRepository
+    private val listMovie = MutableLiveData<List<Movie>>()
     private val isLoading = MutableLiveData<Boolean>()
 
     init {
-        setMovie()
+        val favoriteDao = AppDatabase.getDatabase(application).favoriteDao()
+        repository = MovieCatalogRepository(favoriteDao)
+        setMovies()
     }
 
-    private fun setMovie(){
-        val client = AsyncHttpClient()
-        val listItems = ArrayList<Movie>()
-        val language = lang
-        val API_KEY = BuildConfig.TMDB_API_KEY
-        val url = "https://api.themoviedb.org/3/tv/popular?api_key=$API_KEY&language=$language"
-        Log.i("MOVIE_VIEW_MODEL", "CALLING API")
-        isLoading.postValue(true)
-        client.get(url, object : AsyncHttpResponseHandler(){
-            override fun onSuccess(
-                statusCode: Int,
-                headers: Array<out Header>?,
-                responseBody: ByteArray?
-            ) {
-                val result = responseBody?.let { String(it) }
-                val responseObject = JSONObject(result)
-                val list = responseObject.getJSONArray("results")
-
-                for(i in 0 until list.length()){
-                    val movie = list.getJSONObject(i)
-                    val name = movie.getString("name")
-                    val image = movie.getString("poster_path")
-                    val overview = movie.getString("overview")
-                    val movieItem = Movie(name, image, overview)
-                    listItems.add(movieItem)
-                }
-                listMovie.postValue(listItems)
-                isLoading.postValue(false)
+    private fun setMovies(){
+        Log.i("Movie", "setMovie")
+        viewModelScope.launch {
+            Log.i("Movie", "launch")
+            isLoading.postValue(true)
+            val movies = repository.getPopularTvShows(lang)
+            try {
+                Log.i("Response", "Success: ${movies.size} Movies retrieved!")
+                listMovie.postValue(movies)
+            }catch (e: Exception){
+                Log.i("Response", "Failure: ${e.message}")
             }
-
-            override fun onFailure(
-                statusCode: Int,
-                headers: Array<out Header>?,
-                responseBody: ByteArray?,
-                error: Throwable?
-            ) {
-                Log.d("onFailure", error?.message.toString())
-                isLoading.postValue(false)
-            }
-        })
+            isLoading.postValue(false)
+        }
     }
 
-    internal fun getMovies(): LiveData<ArrayList<Movie>> {
+    fun restoreMovie(){
+        listMovie.postValue(emptyList())
+        setMovies()
+    }
+
+    fun searchTvShow(query: String){
+        listMovie.postValue(emptyList())
+        viewModelScope.launch {
+            isLoading.postValue(true)
+            val movies = repository.searchTvShow(query)
+            try {
+                Log.i("Response", "Success: ${movies.size} Movies retrieved!")
+                listMovie.postValue(movies)
+            }catch (e: Exception) {
+                Log.i("Response", "Failure: ${e.message}")
+            }
+            isLoading.postValue(false)
+        }
+    }
+
+    internal fun getMovies(): LiveData<List<Movie>> {
         return listMovie
     }
 
     internal fun isLoading(): LiveData<Boolean>{
         return isLoading
+    }
+
+    class Factory(private val language: String, private val application: Application) : ViewModelProvider.Factory {
+        override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+            if(modelClass.isAssignableFrom(TvShowViewModel::class.java)){
+                @Suppress("UNCHECKED_CAST")
+                return TvShowViewModel(language, application) as T
+            }
+            throw IllegalArgumentException("Unknown ViewModel class")
+        }
     }
 }

@@ -10,11 +10,11 @@ import com.bumptech.glide.Glide
 import com.example.moviecatalog.model.Movie
 import kotlinx.android.synthetic.main.item_movie.view.*
 
-class MovieAdapter:
+class MovieAdapter :
     RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
-    private val movies: ArrayList<Movie> = ArrayList()
+    private val movies: MutableList<Movie> = mutableListOf()
 
-    fun setData(items: ArrayList<Movie>){
+    fun setData(items: List<Movie>) {
         movies.clear()
         movies.addAll(items)
         notifyDataSetChanged()
@@ -39,18 +39,19 @@ class MovieAdapter:
         holder.bind(movies[position])
     }
 
-    inner class ViewHolder internal constructor(view: View): RecyclerView.ViewHolder(view) {
+    inner class ViewHolder internal constructor(view: View) : RecyclerView.ViewHolder(view) {
         private val txtName: TextView = view.tv_movie_name
         private val txtOverview: TextView = view.tv_movie_overview
-        private val imgPoster : ImageView = view.iv_movie
+        private val imgPoster: ImageView = view.iv_movie
 
-        internal fun bind(movie: Movie){
+        internal fun bind(movie: Movie) {
             itemView.setOnClickListener {
                 onItemClickCallback?.onItemClicked(movie)
             }
             txtName.text = movie.name
             txtOverview.text = movie.overview
-            Glide.with(itemView.context).load("https://image.tmdb.org/t/p/original${movie.image}").into(imgPoster)
+            Glide.with(itemView.context).load("https://image.tmdb.org/t/p/original${movie.image}")
+                .into(imgPoster)
         }
     }
 
