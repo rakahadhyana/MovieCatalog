@@ -86,7 +86,7 @@ class FavoriteRecyclerViewFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         arguments?.takeIf { it.containsKey(ARG_OBJECT) }?.apply {
             val position = getInt(ARG_OBJECT)
-            val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerviewFavorite)
+            val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewFavorite)
             val adapter = MovieAdapter()
             adapter.setOnItemClickCallback(object : MovieAdapter.OnItemClickCallback {
                 override fun onItemClicked(data: Movie) {

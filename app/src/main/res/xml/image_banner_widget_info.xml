@@ -7,4 +7,4 @@
     android:minHeight="110dp"
     android:previewImage="@drawable/starwars"
     android:updatePeriodMillis="0"
-    android:widgetCategory="home_screen"></appwidget-provider>
+    android:widgetCategory="home_screen"/>

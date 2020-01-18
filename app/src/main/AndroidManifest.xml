@@ -18,7 +18,7 @@
             android:authorities="com.example.moviecatalog"
             android:readPermission="com.example.moviecatalog.READ_DATABASE"
             android:enabled="true"
-            android:exported="true"></provider>
+            android:exported="true"/>
 
         <receiver
             android:name=".ui.reminderSetting.AlarmReceiver"

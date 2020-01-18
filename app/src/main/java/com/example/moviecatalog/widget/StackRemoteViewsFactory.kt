@@ -32,11 +32,11 @@ internal class StackRemoteViewsFactory(
         isLoaded = false
         CoroutineScope(Dispatchers.Default).launch{
             favoriteMovies = repository.getListFavoriteMovie()
-            Log.i("ondatasetchange", "$favoriteMovies")
+            Log.i("onDataSetChange", "$favoriteMovies")
             isLoaded = true
         }
         while (!isLoaded){
-            Log.i("ondatasetchange", "still loading database")
+            Log.i("onDataSetChange", "still loading database")
         }
     }
 

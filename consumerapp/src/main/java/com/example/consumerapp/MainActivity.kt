@@ -3,12 +3,11 @@ package com.example.consumerapp
 import android.database.ContentObserver
 import android.database.Cursor
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.HandlerThread
 import android.util.Log
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.consumerapp.model.Movie
 import kotlinx.android.synthetic.main.activity_main.*
@@ -73,7 +72,6 @@ class MainActivity : AppCompatActivity() {
                 adapter.setData(favorites)
             } else {
                 adapter.setData(emptyList())
-                Toast.makeText(this@MainActivity, "tidak ada data", Toast.LENGTH_SHORT).show()
             }
         }
     }
