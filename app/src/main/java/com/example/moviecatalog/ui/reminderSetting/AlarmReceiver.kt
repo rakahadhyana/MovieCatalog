@@ -96,8 +96,7 @@ class AlarmReceiver : BroadcastReceiver() {
     fun cancelAlarm(context: Context, type: String) {
         val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
         val intent = Intent(context, AlarmReceiver::class.java)
-        val requestCode =
-            if (type.equals(TYPE_DAILY, ignoreCase = true)) ID_DAILY_REMINDER else ID_DAILY_RELEASE
+        val requestCode = if (type == TYPE_DAILY) ID_DAILY_REMINDER else ID_DAILY_RELEASE
         val pendingIntent = PendingIntent.getBroadcast(context, requestCode, intent, 0)
         pendingIntent.cancel()
         alarmManager.cancel(pendingIntent)
