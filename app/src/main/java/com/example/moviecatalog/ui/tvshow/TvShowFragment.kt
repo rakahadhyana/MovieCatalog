@@ -36,8 +36,7 @@ class TvShowFragment : Fragment() {
         } else {
             Locale("en")
         }
-        val locale: String = primaryLocale?.isO3Country ?: "en"
-        val language: String = when (locale) {
+        val language: String = when (primaryLocale?.isO3Country ?: "en") {
             "IDN" -> "id"
             else -> "en"
         }

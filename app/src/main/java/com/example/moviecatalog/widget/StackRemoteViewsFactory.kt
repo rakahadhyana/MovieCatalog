@@ -2,7 +2,6 @@ package com.example.moviecatalog.widget
 
 import android.content.Context
 import android.content.Intent
-import android.os.Binder
 import android.util.Log
 import android.widget.RemoteViews
 import android.widget.RemoteViewsService
@@ -12,7 +11,9 @@ import com.example.moviecatalog.MovieCatalogRepository
 import com.example.moviecatalog.R
 import com.example.moviecatalog.database.AppDatabase
 import com.example.moviecatalog.database.Favorite
-import kotlinx.coroutines.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 internal class StackRemoteViewsFactory(
     private val mContext: Context

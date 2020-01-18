@@ -68,6 +68,17 @@ class MovieCatalogRepository(private val favoriteDao: FavoriteDao) {
         return movies
     }
 
+    suspend fun getDailyRelease(startDate: String, endDate: String): List<Movie> {
+        var movies = emptyList<Movie>()
+        withContext(Dispatchers.IO) {
+            val response = TMDBApi.tmdb.getDailyRelease(startDate, endDate)
+            movies = response.results.map {
+                Movie(it.title, it.posterUrl ?: "", it.overview)
+            }
+        }
+        return movies
+    }
+
     suspend fun getFavoriteByName(movieName: String): List<Favorite> {
         var favoriteByName: List<Favorite> = emptyList()
         withContext(Dispatchers.IO) {

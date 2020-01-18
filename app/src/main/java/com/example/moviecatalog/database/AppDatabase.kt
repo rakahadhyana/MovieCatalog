@@ -1,6 +1,7 @@
 package com.example.moviecatalog.database
 
 import android.content.Context
+import android.net.Uri
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
@@ -30,5 +31,6 @@ abstract class AppDatabase : RoomDatabase() {
                 return instance
             }
         }
+
     }
 }

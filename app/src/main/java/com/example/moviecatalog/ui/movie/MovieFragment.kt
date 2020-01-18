@@ -3,24 +3,21 @@ package com.example.moviecatalog.ui.movie
 import android.app.SearchManager
 import android.content.Context
 import android.content.Intent
-import android.opengl.Visibility
 import android.os.Build
 import android.os.Bundle
 import android.view.*
 import android.widget.SearchView
 import android.widget.Toast
-import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.moviecatalog.ui.detail.DetailActivity
 import com.example.moviecatalog.MovieAdapter
 import com.example.moviecatalog.R
 import com.example.moviecatalog.model.Movie
+import com.example.moviecatalog.ui.detail.DetailActivity
 import kotlinx.android.synthetic.main.fragment_movie.*
 import kotlinx.android.synthetic.main.fragment_movie.view.*
-import kotlinx.android.synthetic.main.nav_header_drawer.view.*
 import java.util.*
 
 class MovieFragment : Fragment() {
@@ -39,8 +36,7 @@ class MovieFragment : Fragment() {
         } else {
             Locale("en")
         }
-        val locale: String = primaryLocale?.isO3Country ?: "en"
-        val language: String = when (locale) {
+        val language: String = when (primaryLocale?.isO3Country ?: "en") {
             "IDN" -> "id"
             else -> "en"
         }

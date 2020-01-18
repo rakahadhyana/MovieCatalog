@@ -3,6 +3,7 @@
     package="com.example.moviecatalog">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <permission android:name="com.example.moviecatalog.READ_DATABASE" android:protectionLevel="normal"/>
 
     <application
         android:allowBackup="true"
@@ -12,6 +13,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <provider
+            android:name=".database.FavoriteMovieProvider"
+            android:authorities="com.example.moviecatalog"
+            android:readPermission="com.example.moviecatalog.READ_DATABASE"
+            android:enabled="true"
+            android:exported="true"></provider>
+
+        <receiver
+            android:name=".ui.reminderSetting.AlarmReceiver"
+            android:enabled="true"
+            android:exported="true" />
         <receiver android:name=".widget.ImagesBannerWidget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />

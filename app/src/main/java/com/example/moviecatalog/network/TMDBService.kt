@@ -4,7 +4,6 @@ import com.example.moviecatalog.BuildConfig
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
-import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
@@ -25,6 +24,10 @@ interface TMDBService {
 
     @GET("search/tv?api_key=$API_KEY")
     suspend fun searchTvShow(@Query("query") query: String): NetworkTvContainer
+
+    @GET("discover/movie?api_key=$API_KEY")
+    suspend fun getDailyRelease(@Query("primary_release_date.gte") dateStart: String,
+                                @Query("primary_release_date.lte") dateEnd: String) : NetworkMovieContainer
 }
 
 object TMDBApi {

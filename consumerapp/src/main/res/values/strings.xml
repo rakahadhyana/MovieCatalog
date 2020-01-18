@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">ConsumerApp</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="menu_movie">Movie</string>
+    <string name="menu_tv_show">TV Show</string>
+    <string name="user">User</string>
+    <string name="user_mail_com">user@mail.com</string>
+    <string name="overview">Overview</string>
+    <string name="movies">Movies</string>
+    <string name="tv_show">TV Show</string>
+    <string name="language_setting">Language Setting</string>
+    <string name="add_favorite">add to favorite</string>
+    <string name="remove_favorite">removed from favorite</string>
+    <string name="favorite">Favorite</string>
+    <string name="movie_poster">movie poster</string>
+    <string name="user_icon">user icon</string>
+    <string name="search_title">search</string>
+    <string name="appwidget_text" translatable="false">Favorite Movies</string>
+    <string name="empty_text" translatable="false">NO DATA</string>
+</resources>

@@ -1,13 +1,10 @@
 package com.example.moviecatalog
 
-import android.app.SearchManager
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.provider.Settings
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.SearchView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -39,7 +36,7 @@ class DrawerActivity : AppCompatActivity() {
 
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_movie, R.id.nav_tvshow, R.id.nav_favorite
+                R.id.nav_movie, R.id.nav_tvShow, R.id.nav_favorite
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -75,6 +72,9 @@ class DrawerActivity : AppCompatActivity() {
         if (item.itemId == R.id.action_change_settings) {
             val mIntent = Intent(Settings.ACTION_LOCALE_SETTINGS)
             startActivity(mIntent)
+        }
+        if (item.itemId == R.id.action_notification_setting) {
+            findNavController(R.id.nav_host_fragment).navigate(R.id.open_settings_fragment)
         }
         return super.onOptionsItemSelected(item)
     }

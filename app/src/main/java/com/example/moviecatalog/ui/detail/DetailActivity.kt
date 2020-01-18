@@ -2,13 +2,12 @@ package com.example.moviecatalog.ui.detail
 
 import android.appwidget.AppWidgetManager
 import android.content.ComponentName
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.RemoteViews
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.bumptech.glide.Glide
@@ -80,7 +79,6 @@ class DetailActivity : AppCompatActivity() {
         if (item.itemId == R.id.action_favorite){
             detailViewModel.onFavoriteClicked()
             val manager = AppWidgetManager.getInstance(this)
-            val view = RemoteViews(packageName, R.layout.image_banner_widget)
             val theWidget = ComponentName(this, ImagesBannerWidget::class.java)
             val appWidgetIds = manager.getAppWidgetIds(theWidget)
             manager.notifyAppWidgetViewDataChanged(appWidgetIds, R.id.stack_view)

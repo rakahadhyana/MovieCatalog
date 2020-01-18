@@ -8,14 +8,7 @@ import android.content.Intent
 import android.widget.RemoteViews
 import android.widget.Toast
 import androidx.core.net.toUri
-import com.example.moviecatalog.MovieCatalogRepository
 import com.example.moviecatalog.R
-import com.example.moviecatalog.database.AppDatabase
-import com.example.moviecatalog.database.Favorite
-import com.example.moviecatalog.model.Movie
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 class ImagesBannerWidget : AppWidgetProvider() {
 
